@@ -26,6 +26,7 @@ A handoff to a runningback/fullback's net running distance is calculated by thes
 	- Runningback fullback acceleration,speed,toughness,and elusiveness. (Positive)
 	- Defensive scheme (If a defensive formation is known to limit run yards, such as a 5-2 defense, then the net run yards will be affected negatively.)
 	- Offensive Linemen blocking ability 
+	- Linebacker play recognition ability
 3. SPECIAL TEAMS PLAYS 
 Special teams plays are greatly simplified in this simulator.
 	- The chance that a field goal is missed is solely determined by the distance to the goalposts (= distance to endzone + 17 yards).
