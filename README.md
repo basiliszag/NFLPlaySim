@@ -25,8 +25,8 @@ A completion of a pass from a quarterback to a wide receiver is dependent on fou
 A handoff to a runningback/fullback's net running distance is calculated by these factors:
 	- Runningback fullback acceleration,speed,toughness,and elusiveness. (Positive)
 	- Defensive scheme (If a defensive formation is known to limit run yards, such as a 5-2 defense, then the net run yards will be affected negatively.)
-	- Offensive Linemen blocking ability 
+	- Offensive Linemen blocking ability (positive).
 3. SPECIAL TEAMS PLAYS 
-The chance that a field goal is missed is solely determined by the distance to the goalposts (= distance to endzone + 17 yards).
-The chance that a kickoff is returned for a touchdown is always 3 percent. Otherwise, kickoffs automatically become touchbacks (opponent's ball at their 25 yard line)
-Punters are assumed as total perfect machines here, due to the completely unpredictable nature of a punted football. A punter will always kick for 50 yards. If the punting team is beyond their opponent's 50 yard line, the punter will kick the ball to the opponent's 5 yard line. 
+-The chance that a field goal is missed is solely determined by the distance to the goalposts (= distance to endzone + 17 yards).
+-The chance that a kickoff is returned for a touchdown is always 3 percent. Otherwise, kickoffs automatically become touchbacks (opponent's ball at their 25 yard line)
+-Punters are assumed as total perfect machines here, due to the completely unpredictable nature of a punted football. A punter will always kick for 50 yards. If the punting team is beyond their opponent's 50 yard line, the punter will kick the ball to the opponent's 5 yard line. 
