@@ -1,7 +1,7 @@
 # NFLPlaySim
 Simplified Simulation of an NFL play given players, statistics, and a playbook. 
 
-Thiw program attempts to simulate an NFL play through object-oriented programming. 
+This program attempts to simulate an NFL play through object-oriented programming. 
 An NFL play consists of an offense and defense, both of which contain 11 players. 
 Each the offense and defense MUST consist of eleven players at a time, with twenty-two players making up the second and third depth bench.
 For simplicity, only fundamental passing, running, and special teams plays will be considered (no trick plays).
@@ -27,6 +27,7 @@ A handoff to a runningback/fullback's net running distance is calculated by thes
 	- Defensive scheme (If a defensive formation is known to limit run yards, such as a 5-2 defense, then the net run yards will be affected negatively.)
 	- Offensive Linemen blocking ability 
 3. SPECIAL TEAMS PLAYS 
+Special teams plays are greatly simplified in this simulator.
 	-The chance that a field goal is missed is solely determined by the distance to the goalposts (= distance to endzone + 17 yards).
 	-The chance that a kickoff is returned for a touchdown is always 3 percent. Otherwise, kickoffs automatically become touchbacks (opponent's ball at their 25 yard line)
 	-Punters are assumed as total perfect machines here, due to the completely unpredictable nature of a punted football. A punter will always kick for 50 yards. If the punting team is beyond their opponent's 50 yard line, the punter will kick the ball to the opponent's 5 yard line. 
