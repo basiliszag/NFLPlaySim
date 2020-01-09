@@ -3,7 +3,8 @@ Simplified Simulation of an NFL play given players, statistics, and a playbook.
 
 This program attempts to simulate an NFL play through object-oriented programming. 
 An NFL play consists of an offense and defense, both of which contain 11 players. 
-Each the offense and defense MUST consist of eleven players at a time, with twenty-two players making up the second and third depth bench.
+Each the offense and defense MUST consist of eleven players at a time. 
+
 For simplicity, only fundamental passing, running, and special teams plays will be considered (no trick plays).
 
 Attribute statistics for players are graded on a range from 0 to 100, where 0 = complete incompetence and 100 = mastery. 
