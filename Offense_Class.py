@@ -7,24 +7,38 @@ import random as rd
 
 class Offense:
 	legal_plays = ["run", "pass", "field goal"]
-	legal_formations = ["I", "T", ]
-	def __init__(self):
-		""" Create an Offense consisting of a starting lineup, and two-string-deep bench. 
-		Each of starters, second_string, third_string must have EXACTLY 11 players,
-		while special_teams have 5 players."""
-		self.starters = [] 
-		self.second_string = [] 
-		self.third_string = []
-		self.special_teams = []
-		self.formation = "I"
-		self.play = "Hail Mary"
-		self.fillRoster()
+	legal_formations = ["I", "T"]
+	name = "49ers"
+	play = ""
 
-	def fillRoster():
-		self.starters = [] 
-		self.second_string = [] 
-		self.third_string = []
-		self.special_teams = []
+	def __init__(self, form):
+		""" Create an offensive lineup, with an indicator specifying the formation/play."""
+		if form == 1:
+			self.QB = QuarterBack()
+			self.Linemen = [Center(), Guard(), Guard(), Tackle(), Tackle()] 
+			self.Receivers = [WideOut(route="Quick Slant Right"), WideOut(route="Quick Slant Left"), TightEnd()]
+			self.Backs = [RunningBack(), RunningBack()]
+			self.play = "Double Slants"
+
+		elif form == 2:
+			self.QB = QuarterBack()
+			self.Linemen = [Center(), Guard(), Guard(), Tackle(), Tackle()] 
+			self.Receivers = [WideOut(), TightEnd(), TightEnd()]
+			self.Backs = [RunningBack(), RunningBack(), RunningBack()]
+			self.formation = "T"
+			self.play = "Sweep"
+
+	def fillStats(self, OffensePATH):
+		"""Generate team players stats from excel filepath (.xlsx),
+		 which contains the starting on-field lineup and their stats."""
+		stats = pd.read_excel(OffensePATH) #dataframe containing lineup
+
+	def snap():
+		""" Snap the ball/start play."""
+		if play == "49ers 0:53":
+			
+		else:
+			return 1
 		
 class OffensivePlayer:
 	"""Stats: 0 (terrible) to 100 (maxed out)."""
@@ -62,6 +76,7 @@ class QuarterBack(OffensivePlayer):
 	pressure_awareness = 50
 	scramble_ability = 50
 	tackle_break = 30
+	qb_form = "Shotgun"
 
 	def __init__(self, stats):
 		throwPower = stats[0]
@@ -71,10 +86,13 @@ class QuarterBack(OffensivePlayer):
 		tackle_break = stats[4]	
 		completed_pass = False
 
+	def __init__(self, ind):
+		if ind
+
 	def throw(self, receiver):
 		if receiver.is_open and receiver.dist <= throwPower:
 			completed_pass = True
-		elif receiver.coverage <= (self.throwAcc + self.throwAcc) / 2:
+		elif receiver.coverage <= 5 and receiver.safety_presence <= 6:
 			completed_pass = True
 		else:
 			completed_pass = False #Replace with some formula involving coverage level, receiver hands, qb accuracy.
@@ -83,8 +101,8 @@ class RunningBack(OffensivePlayer):
 	acceleration = 50
 	tackle_break = 50
 	def __init__(self, stats):
-		acceleration = stats[0]
-		tackle_break = stats[1]
+		self.acceleration = stats[0]
+		self.tackle_break = stats[1]
 
 
 class Receiver(OffensivePlayer):
@@ -93,25 +111,36 @@ class Receiver(OffensivePlayer):
 	route_running = 50
 	is_open = True
 	dist = 0
+	route = ""
+	coverage = 5
+	safety_presence = 5
 	def __init__(self, stats):
-		acceleration = stats[0]
-		tackle_break = stats[1]
-		route_running = stats[2]
+		self.acceleration = stats[0]
+		self.tackle_break = stats[1]
+		self.route_running = stats[2]
+	def __init__(self, route):
+		self.route = route
 
 class WideOut(Receiver):
 	blocking = 50
+	role = "route"
+	def __init__(self, route):
+		self.route = route		
 class Slot(Receiver):
 	blocking = 50
+	role = "route"
+	def __init__(self, route):
+		self.route = route	
 class TightEnd(Receiver):
 	pass_block = 50
 	run_block = 50
-
+	role = "route"
 class Lineman(OffensivePlayer):
 	pass_block = 50
 	run_block = 50
-
 class Center(Lineman):
 	play_recognition = 50
 class Guard(Lineman):
 	pull = 50
 class Tackle(Lineman):
+	pass

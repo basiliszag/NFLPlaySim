@@ -5,11 +5,11 @@ import Offense_Class, Defense_Class, importlib
 import pandas as pd
 # importlib.reload(Offense_Class)
 # importlib.reload(Defense_Class)
-offense = Offense_Class.Offense()
+offense = Offense_Class.Offense(form=1)
 defense = Defense_Class.Defense()
 
-offense.formation()
-defense.formation()
+
+
 playSim(offense, defense)
 
 def playSim(offense, defense):

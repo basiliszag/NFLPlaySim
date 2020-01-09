@@ -1,18 +1,16 @@
 import pandas as pd
 class Defense:
-	legalCoverages = ["3-4", ]
+	legalCoverages = ["3-4"]
+	name = "Vikings"
 	def __init__(self):
 		self.starters = []
 		self.second_string = [] 
 		self.third_string = []
 		self.coverage = ""
 
-	def generateTeam(self, OffensePATH):
+	def generateTeam(self, DefensePATH):
 		"""Generate team players from excel path (.xlsx)."""
 		df = pd.read_excel(OffensePATH)
-		print(df)
-
-	def 
 
 class DefensivePlayer:
 	"""Stats: 0 (terrible) to 100 (maxed out)."""
@@ -32,19 +30,20 @@ class DefensivePlayer:
 		vertical = stats[4]
 
 class Lineman(DefensivePlayer):
-
+	pass
 class DTackle(Lineman):
-
+	pass
 class DEnd(Lineman):
-
-class Linebacker(DefensivePlayer):
-
+	pass
+class Linebacker(DefensivePlayer):		
+	pass
 class MLB(Linebacker):
-
+	pass
 class InsideLB(Linebacker):
-
+	pass
 class OutsideLB(Linebacker):
-
+	pass
 class Cornerback(DefensivePlayer):
-
+	pass
 class Safety(DefensivePlayer):
+	pass
